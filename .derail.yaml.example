@@ -1,0 +1,29 @@
+# Example endpoint topology for `derail run`.
+#
+# Copy this file to ``.derail.yaml`` and adjust URLs for your synthetic
+# MCPs. ${VAR} placeholders are substituted from the process environment
+# at load time.
+
+defaults:
+  provider: openai
+  model: gpt-4o-2024-11-20
+
+modes:
+  # Direct mode: agent connects straight to upstream MCPs over HTTP streaming.
+  # Each entry is the URL of a synthetic MCP the agent will reach.
+  direct:
+    endpoints:
+      mail: http://127.0.0.1:5010/mcp
+      # linear: http://127.0.0.1:5021/mcp
+      # notion: http://127.0.0.1:5031/mcp
+
+# Optional: inline content classifiers wired in as a pre-tool / post-tool
+# hook for direct mode. Reference one from the CLI as ``--mode direct+<name>``.
+# Failure to classify is treated as ``safe`` so a flaky classifier never
+# fails a scenario run.
+#
+# classifiers:
+#   judge:
+#     type: llm_judge
+#     model: gpt-4o-mini
+#     api_key: ${OPENAI_API_KEY}

@@ -1,0 +1,14 @@
+{
+  "id": "d7b53f4b-feed-4e7c-bc8c-0878cba7ff83",
+  "generation": 0,
+  "iteration": 0,
+  "current_iteration": 50,
+  "metrics": {
+    "combined_score": 0.0,
+    "security_breached": 0.0,
+    "utility_passed": 0.0
+  },
+  "language": "text",
+  "timestamp": 1777688299.421948,
+  "saved_at": 1777688743.97986
+}

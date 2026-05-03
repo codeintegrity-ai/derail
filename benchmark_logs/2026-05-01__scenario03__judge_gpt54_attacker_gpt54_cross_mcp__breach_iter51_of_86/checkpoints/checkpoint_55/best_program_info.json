@@ -1,0 +1,14 @@
+{
+  "id": "c4d4116d-67bc-47ac-93c3-6d08411e6370",
+  "generation": 5,
+  "iteration": 51,
+  "current_iteration": 55,
+  "metrics": {
+    "combined_score": 1.0,
+    "security_breached": 1.0,
+    "utility_passed": 1.0
+  },
+  "language": "text",
+  "timestamp": 1777688755.235342,
+  "saved_at": 1777688797.7334669
+}
