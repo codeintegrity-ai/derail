@@ -74,6 +74,12 @@ classifiers:
     api_key: ${OPENAI_API_KEY}
     system_prompt: *judge_prompt
 
+  judge_gpt54mini:
+    type: llm_judge
+    model: gpt-5.4-mini
+    api_key: ${OPENAI_API_KEY}
+    system_prompt: *judge_prompt
+
   judge_gpt55:
     type: llm_judge
     model: gpt-5.5
