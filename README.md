@@ -12,8 +12,6 @@ The reference deployment is synthetic Notion + Linear MCPs, with two
 scenarios under `benchmarks/scenarios/` — both featured in
 `blog_classifier_evasion.md` and snapshotted under `benchmark_logs/`.
 
-![How derail tests adversarial prompt injections against classifier-defended agents](benchmark_flow.svg)
-
 ## Setup
 
 Requires Python 3.10+ and [uv](https://docs.astral.sh/uv/).
