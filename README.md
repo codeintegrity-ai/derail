@@ -10,9 +10,10 @@ classifier) loop until it finds a phrasing that bypasses the judge and
 completes the attacker's goal. The [research writeup](https://www.codeintegrity.ai/blog/derail)
 reports the experiment and its limitations.
 
-The reference deployment is synthetic Notion + Linear MCPs, with two
-scenarios under `benchmarks/scenarios/` — both featured in
-`blog_classifier_evasion.md` and snapshotted under `benchmark_logs/`.
+The reference deployment uses synthetic Notion and Linear MCPs. Its two
+scenarios are under `benchmarks/scenarios/`, with selected run artifacts under
+`benchmark_logs/`. See the [research writeup](https://www.codeintegrity.ai/blog/derail)
+for the reported results and scope.
 
 ## Setup
 
@@ -90,10 +91,10 @@ Per-iteration OTEL traces and openevolve checkpoints land under `runs/`.
 
 ## Reproducing the blog runs
 
-Notable runs cited in `blog_classifier_evasion.md` are snapshotted under
-`benchmark_logs/`. Each snapshot is self-contained — scenario YAML, seed,
-materialized openevolve config, checkpoints, traces, and a `SUMMARY.md` with
-the exact reproduction command.
+Selected runs discussed in the [research writeup](https://www.codeintegrity.ai/blog/derail)
+are snapshotted under `benchmark_logs/`. Each snapshot contains the scenario
+YAML, seed, materialized openevolve config, checkpoints, and traces. The
+commands above show how to run the benchmark against a configured environment.
 
 ## Further reading
 
