@@ -1,12 +1,14 @@
-# derail
+# DERAIL
 
-A benchmark for measuring how well an LLM-as-a-judge classifier defends an
+[CodeIntegrity](https://www.codeintegrity.ai/) developed DERAIL as a research
+benchmark for measuring how well an LLM-as-a-judge classifier defends an
 MCP-connected agent against indirect prompt injection. You bring an MCP
 deployment and a workflow, plant an injection in a data field the agent will
 read, wire a classifier in as a pre-tool / post-tool hook, and let an
 evolutionary search iterate the planted text against the live (agent +
 classifier) loop until it finds a phrasing that bypasses the judge and
-completes the attacker's goal.
+completes the attacker's goal. The [research writeup](https://www.codeintegrity.ai/blog/derail)
+reports the experiment and its limitations.
 
 The reference deployment is synthetic Notion + Linear MCPs, with two
 scenarios under `benchmarks/scenarios/` — both featured in
