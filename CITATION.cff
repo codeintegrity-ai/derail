@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use DERAIL, cite this benchmark and its research writeup."
+type: software
+title: "DERAIL: Adaptive Prompt Injection Against LLM-as-a-Judge Defenses"
+authors:
+  - name: CodeIntegrity
+date-released: 2026-05-26
+url: https://www.codeintegrity.ai/blog/derail
+repository-code: https://github.com/codeintegrity-ai/derail

@@ -11,9 +11,23 @@ completes the attacker's goal. The [research writeup](https://www.codeintegrity.
 reports the experiment and its limitations.
 
 The reference deployment uses synthetic Notion and Linear MCPs. Its two
-scenarios are under `benchmarks/scenarios/`, with selected run artifacts under
-`benchmark_logs/`. See the [research writeup](https://www.codeintegrity.ai/blog/derail)
-for the reported results and scope.
+scenarios are under `benchmarks/scenarios/`. The published data comprises 120
+per-run CSV rows: 60 in the [OpenAI-judge runs](benchmarks/experiment.csv) and
+60 in the [Gemini-judge runs](benchmarks/experiment_gemini.csv), with 10 repeats
+per scenario/judge cell. Each CSV includes a no-judge baseline. The corresponding [OpenAI-judge summary](benchmarks/experiment_summary.csv)
+and [Gemini-judge summary](benchmarks/experiment_gemini_summary.csv) report
+breach rates and iteration statistics. Recreate both summaries with:
+
+```bash
+uv run python benchmarks/aggregate_experiment.py --in benchmarks/experiment.csv --out benchmarks/experiment_summary.csv
+uv run python benchmarks/aggregate_experiment.py --in benchmarks/experiment_gemini.csv --out benchmarks/experiment_gemini_summary.csv
+```
+
+Only [two selected run snapshots](benchmark_logs/) are included, not artifacts
+for all 120 runs. The absolute `output_dir` and `payload_path` values in the
+CSVs refer to the original local machine; those paths are not downloadable
+from this repository. See the [research writeup](https://www.codeintegrity.ai/blog/derail)
+for the reported results and limitations.
 
 ## Setup
 
@@ -91,7 +105,7 @@ Per-iteration OTEL traces and openevolve checkpoints land under `runs/`.
 
 ## Reproducing the blog runs
 
-Selected runs discussed in the [research writeup](https://www.codeintegrity.ai/blog/derail)
+Two selected runs discussed in the [research writeup](https://www.codeintegrity.ai/blog/derail)
 are snapshotted under `benchmark_logs/`. Each snapshot contains the scenario
 YAML, seed, materialized openevolve config, checkpoints, and traces. The
 commands above show how to run the benchmark against a configured environment.
@@ -102,6 +116,3 @@ commands above show how to run the benchmark against a configured environment.
   trace → score pipeline.
 - `benchmarks/README.md` — deeper notes on the sweep, the judge prompt
   rationale, and how to add judges or attacker models.
-- `docs/derail/predicate_cookbook.md` — predicate DSL reference for
-  `utility:` / `security:` blocks.
-- `CLAUDE.md` — code style + Claude-specific guidance for editing this repo.
